@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Glow effect behind -->
+  <defs>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
+      <stop offset="0%" style="stop-color:rgb(255,255,200);stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:rgb(255,215,0);stop-opacity:0" />
+    </radialGradient>
+  </defs>
+  <ellipse cx="256" cy="400" rx="200" ry="50" fill="url(#glow)" />
+
+  <!-- Box Back (Inside) -->
+  <path d="M100 300 L412 300 L380 480 L132 480 Z" fill="#7c261e" />
+  
+  <!-- Box Front -->
+  <path d="M100 350 L412 350 L380 480 L132 480 Z" fill="#c0392b" stroke="#8e281d" stroke-width="5"/>
+  
+  <!-- Vertical Ribbon on Box -->
+  <path d="M236 350 L276 350 L270 480 L242 480 Z" fill="#f1c40f" />
+
+  <!-- Lid (Flying off to the side) -->
+  <g transform="translate(20, -80) rotate(-20, 256, 256)">
+    <!-- Lid Base -->
+    <rect x="80" y="280" width="352" height="60" rx="5" fill="#c0392b" stroke="#8e281d" stroke-width="5"/>
+    <!-- Lid Ribbon Horizontal -->
+    <rect x="80" y="300" width="352" height="20" fill="#a93226" />
+    <!-- Lid Ribbon Vertical -->
+    <rect x="236" y="280" width="40" height="60" fill="#f1c40f" />
+    
+    <!-- Bow -->
+    <path d="M256 280 C200 200 150 280 256 280 C362 200 312 280 256 280" fill="#f1c40f" stroke="#d4ac0d" stroke-width="3"/>
+    <circle cx="256" cy="280" r="15" fill="#f1c40f" />
+  </g>
+
+  <!-- Stars / Magic -->
+  <g fill="#fff">
+    <circle cx="150" cy="200" r="5">
+      <animate attributeName="opacity" values="0;1;0" dur="1s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="350" cy="150" r="8">
+      <animate attributeName="opacity" values="0;1;0" dur="1.5s" repeatCount="indefinite" />
+    </circle>
+    <circle cx="256" cy="180" r="6">
+      <animate attributeName="opacity" values="0;1;0" dur="2s" repeatCount="indefinite" />
+    </circle>
+  </g>
+</svg>
