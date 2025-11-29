@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendrier de l'Avent - Thème Allemagne</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Deutscher Adventskalender</h1>
+    </header>
+    
+        <main>
+        <!-- Ici, le Javascript va générer les cases du calendrier -->
+        <div id="calendar-container"></div>
+    </main>
+
+    <!-- Modal pour les questions -->
+    <div id="quiz-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-button">&times;</span>
+            <h2 id="modal-title">Question du Jour</h2>
+            <p id="modal-question">Chargement...</p>
+            <div id="answers-container"></div>
+            <p id="feedback-message"></p>
+        </div>
+    </div>
+
+    <!-- Chargement des données des questions -->
+    <script src="questions.js"></script>
+    <!-- Script principal -->
+    <script src="script.js"></script>
+</body>
+</html>

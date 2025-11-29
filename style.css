@@ -1,0 +1,257 @@
+body {
+    margin: 0;
+    padding: 20px;
+    font-family: 'Georgia', serif;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    color: white;
+    text-align: center;
+    min-height: 100vh;
+}
+
+header {
+    margin-bottom: 40px;
+    padding: 30px;
+
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+
+    color: white;
+}
+
+h1 {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 4.5em;
+    margin: 0;
+    color: #c0392b;
+
+    text-shadow:
+        2px 2px 0 #fff,
+        -2px -2px 0 #fff,
+        2px -2px 0 #fff,
+        -2px 2px 0 #fff,
+        0 0 20px #f1c40f,
+        0 0 40px #f1c40f;
+
+    letter-spacing: 2px;
+
+    animation: magicalGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes magicalGlow {
+    from {
+        text-shadow:
+            2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+            0 0 10px #f1c40f;
+        transform: scale(1);
+    }
+
+    to {
+        text-shadow:
+            2px 2px 0 #fff, -2px -2px 0 #fff, 2px -2px 0 #fff, -2px 2px 0 #fff,
+            0 0 30px #f1c40f, 0 0 50px #ffeb3b;
+        transform: scale(1.02);
+    }
+}
+
+header p {
+    font-family: 'Mountains of Christmas', cursive;
+    font-size: 2.2em;
+    color: #f1c40f;
+    margin-top: 10px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 1px;
+}
+
+#calendar-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.day-card {
+    background-color: #c0392b;
+    border: 2px solid #f1c40f;
+    border-radius: 10px;
+    height: 150px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    position: relative;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+
+    background-image: repeating-linear-gradient(45deg,
+            transparent,
+            transparent 10px,
+            rgba(0, 0, 0, 0.05) 10px,
+            rgba(0, 0, 0, 0.05) 20px);
+}
+
+.day-card:hover {
+    transform: translateY(-5px) rotate(2deg);
+    background-color: #e74c3c;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    z-index: 10;
+    border-color: white;
+}
+
+.day-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 100%;
+    background-color: #f1c40f;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.day-card::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 20px;
+    background-color: #f1c40f;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.day-card span {
+    z-index: 2;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+    background-color: #c0392b;
+    padding: 10px 15px;
+    border-radius: 50%;
+    border: 2px solid #f1c40f;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    min-width: 40px;
+}
+/* --- Styles pour la fenêtre modale (Quiz) --- */
+.modal {
+    display: none; /* Caché par défaut */
+    position: fixed;
+    z-index: 100; /* Au-dessus de tout */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fond sombre semi-transparent */
+    backdrop-filter: blur(5px);
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    border: 4px solid #c0392b;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+    animation: popIn 0.3s ease-out;
+    color: #2c3e50;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.close-button {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #aaa;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close-button:hover {
+    color: #c0392b;
+}
+
+#modal-title {
+    font-family: 'Mountains of Christmas', cursive;
+    color: #c0392b;
+    font-size: 2.5em;
+    margin-top: 0;
+}
+
+#modal-question {
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* Styles des boutons de réponse */
+.answer-btn {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    background-color: #f1c40f; /* Or */
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #2c3e50;
+    font-weight: bold;
+    font-family: 'Georgia', serif;
+}
+
+.answer-btn:hover {
+    background-color: #f39c12;
+    transform: scale(1.02);
+}
+
+.answer-btn.correct {
+    background-color: #27ae60 !important; /* Vert */
+    color: white;
+}
+
+.answer-btn.wrong {
+    background-color: #c0392b !important; /* Rouge */
+    color: white;
+}
+
+#feedback-message {
+    margin-top: 15px;
+    font-weight: bold;
+    font-size: 1.2em;
+    min-height: 1.5em;
+}
