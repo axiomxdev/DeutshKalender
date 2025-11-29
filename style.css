@@ -306,16 +306,22 @@ header p {
     font-size: 1.2em;
     min-height: 1.5em;
 }
+
 /* --- Style pour les cases ouvertes (Gagnées) --- */
 .day-card.opened {
-    background-color: transparent; /* Plus de fond rouge */
-    background-image: url('opened-gift.svg'); /* Notre SVG */
+    background-color: transparent;
+    /* Plus de fond rouge */
+    background-image: url('opened-gift.svg');
+    /* Notre SVG */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
-    border: none; /* On enlève la bordure carrée */
-    box-shadow: none; /* On enlève l'ombre de la boîte */
-    transform: scale(1.1); /* Un peu plus grand pour l'effet */
+    border: none;
+    /* On enlève la bordure carrée */
+    box-shadow: none;
+    /* On enlève l'ombre de la boîte */
+    transform: scale(1.1);
+    /* Un peu plus grand pour l'effet */
 }
 
 /* On enlève les rubans CSS car ils sont dans le SVG ou pas nécessaires */
@@ -326,7 +332,8 @@ header p {
 
 /* On cache le numéro ou on le met en petit discret */
 .day-card.opened span {
-    display: none; /* On cache le numéro pour laisser voir le cadeau ouvert */
+    display: none;
+    /* On cache le numéro pour laisser voir le cadeau ouvert */
 }
 
 /* On désactive les effets de survol */
@@ -349,7 +356,8 @@ header p {
     }
 
     h1 {
-        font-size: 2.5em; /* Plus petit sur mobile */
+        font-size: 2.5em;
+        /* Plus petit sur mobile */
     }
 
     header p {
@@ -357,13 +365,15 @@ header p {
     }
 
     #calendar-container {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr)); /* Cases plus petites */
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        /* Cases plus petites */
         gap: 10px;
         padding: 10px;
     }
 
     .day-card {
-        height: 100px; /* Hauteur réduite */
+        height: 100px;
+        /* Hauteur réduite */
         font-size: 1.8em;
     }
 
