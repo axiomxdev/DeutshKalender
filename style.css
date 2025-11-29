@@ -152,19 +152,15 @@ header p {
     min-width: 40px;
 }
 
-/* --- Styles pour la fenêtre modale (Quiz) --- */
 .modal {
     display: none;
-    /* Caché par défaut */
     position: fixed;
     z-index: 100;
-    /* Au-dessus de tout */
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
-    /* Fond sombre semi-transparent */
     backdrop-filter: blur(5px);
 }
 
@@ -175,12 +171,10 @@ header p {
 }
 
 .modal-content {
-    /* Image de fond pour le quiz */
     background-image: url('questionBackground.jpg');
     background-size: cover;
     background-position: center;
     background-color: #fff;
-    /* Fallback */
 
     padding: 30px;
     border-radius: 15px;
@@ -192,17 +186,14 @@ header p {
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
     animation: popIn 0.3s ease-out;
 
-    /* Texte sombre pour contraster avec le fond probablement clair (neige/bois) */
     color: #2c3e50;
     font-weight: bold;
-    /* Halo blanc plus prononcé pour lisibilité */
     text-shadow:
         0 0 5px #fff,
         0 0 10px #fff,
         0 0 15px #fff;
 }
 
-/* Fond semi-transparent blanc derrière la question pour améliorer la lisibilité */
 #modal-question {
     font-size: 1.4em;
     margin-bottom: 20px;
@@ -257,20 +248,16 @@ header p {
     border: 1px solid rgba(200, 200, 200, 0.5);
 }
 
-/* Styles des boutons de réponse */
 .answer-btn {
     display: block;
     width: 100%;
     padding: 12px;
     margin: 10px 0;
 
-    /* Nouvelle couleur : Rouge Noël (plus festif que le bleu nuit) */
     background-color: #c0392b;
     color: #fff;
-    /* Texte blanc */
 
     border: 2px solid #f1c40f;
-    /* Bordure dorée */
     border-radius: 8px;
     font-size: 1.1em;
     cursor: pointer;
@@ -283,20 +270,17 @@ header p {
 
 .answer-btn:hover {
     background-color: #e74c3c;
-    /* Rouge plus clair */
     transform: scale(1.02);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
 }
 
 .answer-btn.correct {
     background-color: #27ae60 !important;
-    /* Vert */
     color: white;
 }
 
 .answer-btn.wrong {
     background-color: #c0392b !important;
-    /* Rouge */
     color: white;
 }
 
@@ -307,36 +291,26 @@ header p {
     min-height: 1.5em;
 }
 
-/* --- Style pour les cases ouvertes (Gagnées) --- */
 .day-card.opened {
     background-color: transparent;
-    /* Plus de fond rouge */
     background-image: url('opened-gift.svg');
-    /* Notre SVG */
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center bottom;
     border: none;
-    /* On enlève la bordure carrée */
     box-shadow: none;
-    /* On enlève l'ombre de la boîte */
     transform: scale(1.1);
-    /* Un peu plus grand pour l'effet */
 }
 
-/* On enlève les rubans CSS car ils sont dans le SVG ou pas nécessaires */
 .day-card.opened::before,
 .day-card.opened::after {
     display: none;
 }
 
-/* On cache le numéro ou on le met en petit discret */
 .day-card.opened span {
     display: none;
-    /* On cache le numéro pour laisser voir le cadeau ouvert */
 }
 
-/* On désactive les effets de survol */
 .day-card.opened:hover {
     transform: scale(1.1);
     background-color: transparent;
@@ -344,7 +318,6 @@ header p {
     cursor: default;
 }
 
-/* --- Responsive Design (Mobile) --- */
 @media (max-width: 768px) {
     body {
         padding: 10px;
@@ -357,7 +330,6 @@ header p {
 
     h1 {
         font-size: 2.5em;
-        /* Plus petit sur mobile */
     }
 
     header p {
@@ -366,14 +338,12 @@ header p {
 
     #calendar-container {
         grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        /* Cases plus petites */
         gap: 10px;
         padding: 10px;
     }
 
     .day-card {
         height: 100px;
-        /* Hauteur réduite */
         font-size: 1.8em;
     }
 
@@ -382,7 +352,6 @@ header p {
         min-width: 25px;
     }
 
-    /* Modal sur mobile */
     .modal-content {
         width: 95%;
         padding: 15px;
