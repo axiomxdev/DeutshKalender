@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnElement.classList.add('correct');
             feedbackMessage.textContent = "Richtig! Bravo ! 🎉";
             feedbackMessage.style.color = "#27ae60";
-            
+
             // Désactiver tous les boutons car c'est gagné
             allButtons.forEach(b => b.disabled = true);
         } else {
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
             btnElement.classList.add('wrong');
             // On désactive juste le bouton faux pour ne pas recliquer dessus
             btnElement.disabled = true;
-            
+
             feedbackMessage.textContent = "Falsch!";
             feedbackMessage.style.color = "#c0392b";
         }
